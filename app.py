@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 
+st.title('Streamlit Text Sizing')
 st.title('This is a title')
 st.header('This is a header')
 st.subheader('This is a subheader')
@@ -28,18 +29,18 @@ st.write('Above: A caption without any tags')
 
 
 st.markdown('---')
-st.write('Below: st.caption also supports tags')
+st.write('Below: st.caption supports inline markdown')
 with st.echo():
-    st.caption('Photo by <a href="https://unsplash.com/@marliesebrandsma?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marliese Streefland</a> on <a href="https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>')
+    st.caption('Photo by [Marliese Streefland](https://unsplash.com/@marliesebrandsma?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)')
 
 st.write('Italic and Bold')
 with st.echo():
-    st.caption('This is small and _italic_ and **bold**')
-    st.markdown('This is small and _italic_ and **bold**', unsafe_allow_html=False)
+    st.caption('This is small text and _italic_ and **bold**')
+    st.markdown('This is normal markdown text and _italic_ and **bold**', unsafe_allow_html=False)
 
 st.markdown('---')
 
-st.write('Trying to parse a multi-line string')
+st.header('Multi-line strings')
 
 st.code("""st.caption('''<small>
 Hello _world_
@@ -108,3 +109,16 @@ test
 2. another
 
 </small>''')
+
+st.subheader('''<small>
+Hello _world_
+
+# test
+
+
+1. One item
+2. another
+
+</small>''')
+
+st.markdown('Photo by <a href="https://unsplash.com/@marliesebrandsma?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marliese Streefland</a> on <a href="https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>')
