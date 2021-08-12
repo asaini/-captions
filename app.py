@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
 
+st.session_state.username
+
 st.title('Streamlit Text Sizing')
 st.title('This is a title')
 st.header('This is a header')
